@@ -33,7 +33,10 @@ async function generatePasswords(count) {
 
   passwords.forEach((password) => {
     const li = document.createElement("li");
-    li.textContent = password;
+    li.textContent = password
+  .split(' ')
+  .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+  .join(' ');
     passwordList.appendChild(li);
   });
 }
